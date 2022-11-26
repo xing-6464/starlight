@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <div className='App'>
       <header className='App-header'>
-        <Menu defaultIndex={0} onSelect={(index) => {alert(index)}}>
+        <Menu defaultIndex={0} onSelect={(index) => {alert(index)}} mode='vertical'>
           <MenuItem index={0}>
             cool link
           </MenuItem>
