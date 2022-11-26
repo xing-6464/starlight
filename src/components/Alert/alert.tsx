@@ -36,7 +36,7 @@ export const Alert: FC<AlertProps> = (props) => {
   const classes = classNames('star-alert', {
     [`star-alert-${type}`]: type,
   })
-  
+
   const titleClass = classNames('star-alert-title', {
     'bold-title': description
   })
