@@ -4,7 +4,7 @@ import Alert from './components/Alert'
 
 const App: React.FC = () => {
   return (
-    <Alert title='星'></Alert>
+    <Alert title='星' type='danger'></Alert>
   )
 }
 
