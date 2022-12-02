@@ -42,6 +42,7 @@ describe('tset Menu and MenuItem component', () => {
     setup(testProps)
     expect(menuElement).toBeInTheDocument()
     expect(menuElement).toHaveClass('star-menu test')
+    // eslint-disable-next-line testing-library/no-node-access
     expect(menuElement.getElementsByTagName('li').length).toEqual(3)
     expect(activeElement).toHaveClass('menu-item is-active')
     expect(disabledElement).toHaveClass('menu-item is-disabled')

@@ -28,9 +28,9 @@ export const Alert: FC<AlertProps> = (props) => {
   const {
     title,
     description,
-    type = 'default',
+    type,
     onClose,
-    closable = true
+    closable
   } = props
 
   const classes = classNames('star-alert', {
@@ -56,6 +56,11 @@ export const Alert: FC<AlertProps> = (props) => {
         </div> ) : ('') }
     </>
   )
+}
+
+Alert.defaultProps = {
+  type: 'default',
+  closable: true
 }
 
 export default Alert

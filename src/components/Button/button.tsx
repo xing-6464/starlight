@@ -21,9 +21,9 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 const Button: React.FC<ButtonProps> = (props) => {
   const {
     className,
-    disabled = false,
+    disabled,
     size,
-    btnType = 'default',
+    btnType,
     href,
     children,
     ...restProps
@@ -56,6 +56,11 @@ const Button: React.FC<ButtonProps> = (props) => {
       </button>
     )
   }
+}
+
+Button.defaultProps = {
+  disabled: false,
+  btnType: 'default'
 }
 
 export default Button

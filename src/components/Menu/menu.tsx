@@ -21,13 +21,13 @@ export const MenuContext = createContext<IMenuContext>({ index: 0 })
 const Menu: React.FC<MenuProps> = (props) => {
   const {
     className,
-    mode = 'horizontal',
+    mode,
     style,
-    defaultIndex = 0,
+    defaultIndex,
     children,
     onSelect
   } = props
-  const [ currentActive, setCurrentActive ] = useState(defaultIndex)
+  const [ currentActive, setCurrentActive ] = useState(defaultIndex as number)
 
   const classes = classNames('star-menu', className, {
     'menu-vertical': mode === 'vertical'
@@ -52,7 +52,7 @@ const Menu: React.FC<MenuProps> = (props) => {
           index
         })
       } else {
-        console.log('Warning: Menu hsa a child which is not a MenuItem component')
+        console.error('Warning: Menu hsa a child which is not a MenuItem component')
       }
     })
   }
@@ -64,6 +64,11 @@ const Menu: React.FC<MenuProps> = (props) => {
       </MenuContext.Provider>
     </ul>
   )
+}
+
+Menu.defaultProps = {
+  mode: 'horizontal',
+  defaultIndex: 0
 }
 
 export default Menu
